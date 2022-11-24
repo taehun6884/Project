@@ -65,12 +65,10 @@
 		  		</fieldset>
 		  		<div class="clear"></div>
 		  		<div id="buttons">
-		  			<input type="submit" value="Submit" class="submit">
-		  			<input type="reset" value="Cancel" class="cancel">
+		  			<input type="button" value="뒤로가기" class="cancel" onclick="history.back()">
 		  		</div>
 		  	</form>
 		  </article>
-		  
 		  
 		<div class="clear"></div>  
 		<!-- 푸터 들어가는곳 -->
