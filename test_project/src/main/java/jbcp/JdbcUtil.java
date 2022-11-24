@@ -79,28 +79,31 @@ public class JdbcUtil {
 	// => 인스턴스 생성 없이도 메서드 호출이 가능하도록 static 메서드로 정의
 	public static void close(Connection con) {
 		try {
-			con.close();
+			if(con != null) {
+				con.close();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-
+	}//close 끝
 	public static void close(PreparedStatement pstmt) {
 		try {
-			pstmt.close();
+			if(pstmt != null) {
+				pstmt.close();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-
+	}//close 끝
 	public static void close(ResultSet rs) {
 		try {
+			if(rs != null) {
 			rs.close();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-	
+	}//close 끝
 }
 
 

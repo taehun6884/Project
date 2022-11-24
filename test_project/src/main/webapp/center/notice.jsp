@@ -1,5 +1,11 @@
+<%@page import="java.util.List"%>
+<%@page import="test_project.BoardDAO"%>
+<%@page import="test_project.BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +33,9 @@
 			</ul>
 		</nav>
 		<!-- 본문 내용 -->
+		
+		
+		
 		<article>
 			<h1>Notice</h1>
 			<table id="notice">
@@ -37,13 +46,26 @@
 					<th class="tdate">Date</th>
 					<th class="tread">Read</th>
 				</tr>
+			
+				
+				<%
+				BoardDAO dao = new BoardDAO(); 
+
+				List<BoardDTO> boardList = dao.selectBoard();
+				%>
+				
+				<c:forEach var="dto" items="<%=boardList %>">
 				<tr onclick="#'">
-					<td>번호</td>
-					<td class="left">제목</td>
-					<td>작성자</td>
-					<td>작성일</td>
-					<td>조회수</td>
+					<td>${dto.idx }</td>
+					<td class="left">${dto.subject }</td>
+					<td>${dto.name }</td>
+					<td><fmt:formatDate value="${dto.date }" pattern = "yy-MM-dd HH:mm"/></td>
+					<td>${dto.readcount }</td>
 				</tr>
+				
+				
+				</c:forEach>
+		
 			</table>
 			<div id="table_search">
 				<input type="button" value="글쓰기" class="btn" onclick="location.href='notice_write.jsp'">
