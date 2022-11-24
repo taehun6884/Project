@@ -11,6 +11,7 @@
 <body>
 	<div id="wrap">
 		<!-- 헤더 들어가는곳 -->
+		<jsp:include page="../inc/top.jsp"></jsp:include>
 		<!-- 헤더 들어가는곳 -->
 		  
 		<!-- 본문들어가는 곳 -->
@@ -47,6 +48,7 @@
 		  
 		<div class="clear"></div>  
 		<!-- 푸터 들어가는곳 -->
+		<jsp:include page="../inc/bottom.jsp"></jsp:include>
 		<!-- 푸터 들어가는곳 -->
 	</div>
 </body>
