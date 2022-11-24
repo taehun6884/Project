@@ -29,7 +29,7 @@
 		<!-- 본문 내용 -->
 		<article>
 			<h1>Notice Write</h1>
-			<form action="#" method="post">
+			<form action="notice_writePro.jsp" method="post">
 				<table id="notice">
 
 					<tr>
