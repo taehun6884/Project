@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>main/main.jsp</title>
-<link href="../css/default.css" rel="stylesheet" type="text/css">
-<link href="../css/front.css" rel="stylesheet" type="text/css">
+<title>메인페이지</title>
+<link href="../css/default.css?" rel="stylesheet" type="text/css">
+<link href="../css/front.css?" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrap">

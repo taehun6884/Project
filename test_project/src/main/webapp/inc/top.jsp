@@ -5,7 +5,7 @@
   <div id="login"><a href="#">login</a> | <a href="#">join</a></div>
   <div class="clear"></div>
   <!-- 로고들어가는 곳 -->
-  <div id="logo"><img src="../images/logo.gif"></div>
+  <div id="logo" onclick = "location.href ='../main/main.jsp'"><img src="../images/logo.gif"></div>
   <!-- 메뉴들어가는 곳 -->
   <nav id="top_menu">
   	<ul>
