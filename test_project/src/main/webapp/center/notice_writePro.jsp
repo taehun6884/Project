@@ -1,5 +1,5 @@
+<%@page import="dao.BoardDAO"%>
 <%@page import="test_project.BoardDTO"%>
-<%@page import="test_project.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>

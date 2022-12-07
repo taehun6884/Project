@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>member/join.jsp</title>
-<link href="../css/default.css" rel="stylesheet" type="text/css">
-<link href="../css/subpage.css" rel="stylesheet" type="text/css">
+<link href="css/default.css" rel="stylesheet" type="text/css">
+<link href="css/subpage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrap">
 		<!-- 헤더 들어가는곳 -->
-		<jsp:include page="../inc/top.jsp"></jsp:include>
+		<jsp:include page="/inc/top.jsp"></jsp:include>
 		<!-- 헤더 들어가는곳 -->
 		  
 		<!-- 본문들어가는 곳 -->
@@ -27,7 +27,7 @@
 		  <!-- 본문 내용 -->
 		  <article>
 		  	<h1>Join Us</h1>
-		  	<form action="joinPro.jsp" method="post" id="join" name="fr">
+		  	<form action="MemberInsertPro.mo" method="post" id="join" name="fr">
 		  		<fieldset>
 		  			<legend>Basic Info</legend>
 		  			<label>User Id</label>
@@ -56,7 +56,7 @@
 		  			<input type="text" name="post_code" id="post_code" placeholder="우편번호">
 		  			<input type="button" value="주소 검색"><br>
 		  			<label>Address</label>
-		  			<input type="text" name="address" > -
+		  			<input type="text" name="address1" > -
 		  			<input type="text" name="address2" ><br>
 		  			<label>Phone Number</label>
 		  			<input type="text" name="phone" ><br>
@@ -74,7 +74,7 @@
 		  
 		<div class="clear"></div>  
 		<!-- 푸터 들어가는곳 -->
-		<jsp:include page="../inc/bottom.jsp"></jsp:include>
+		<jsp:include page="/inc/bottom.jsp"></jsp:include>
 		<!-- 푸터 들어가는곳 -->
 	</div>
 </body>

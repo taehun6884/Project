@@ -2,6 +2,8 @@ package dao;
 
 import java.sql.Connection;
 
+import vo.MemberBean;
+
 public class MemberDAO {
 private MemberDAO() {}
 	
@@ -17,5 +19,10 @@ private MemberDAO() {}
 
 	public void setConnection(Connection con) {
 		this.con = con;
+	}
+
+	public int insertMember(MemberBean vo) {
+		int insertCount = 0;
+		return insertCount;
 	}
 }

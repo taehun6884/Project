@@ -5,19 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>main/main.jsp</title>
-<link href="../css/default.css" rel="stylesheet" type="text/css">
-<link href="../css/front.css" rel="stylesheet" type="text/css">
+<link href="css/default.css" rel="stylesheet" type="text/css">
+<link href="css/front.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrap">
 		<!-- 헤더 들어가는곳 -->
-		<jsp:include page="../inc/top.jsp"></jsp:include>
+		<jsp:include page="inc/top.jsp"></jsp:include>
 		<!-- 헤더 들어가는곳 -->
 		  
 		<div class="clear"></div>   
 		<!-- 본문들어가는 곳 -->
 		<!-- 메인 이미지 -->
-		<div id="main_img"><img src="../images/main_img.jpg"></div>
+		<div id="main_img"><img src="images/main_img.jpg"></div>
 		<!-- 본문 내용 -->
 		<article id="front">
 		  	<div id="solution">
@@ -70,7 +70,7 @@
 		  
 		<div class="clear"></div>  
 		<!-- 푸터 들어가는곳 -->
-		<jsp:include page="../inc/bottom.jsp"></jsp:include>
+		<jsp:include page="inc/bottom.jsp"></jsp:include>
 		<!-- 푸터 들어가는곳 -->
 	</div>
 </body>
