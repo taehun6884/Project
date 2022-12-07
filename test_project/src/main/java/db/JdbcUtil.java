@@ -1,4 +1,4 @@
-package jbcp;
+package db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -53,13 +53,14 @@ public class JdbcUtil {
 			// 5. 자동 커밋(= Auto Commit) 기능 해제(옵션)
 			//    => 기본적으로 JDBC 사용 시 Auto Commit 기능이 동작되도록 설정되어 있음
 			//       (true : Auto Commit 설정, false : Auto Commit 해제)
-//			con.setAutoCommit(false); // 자동 커밋 기능 해제
+			con.setAutoCommit(false); // 자동 커밋 기능 해제
+			// => 별도로 commit, rollback 작업을 수행할 메서드 필요
 			
 			// 6. 현재 커넥션 정보 확인
 			BasicDataSource bds = (BasicDataSource)ds;
-			System.out.println("MaxTotal : " + bds.getMaxTotal()); // 최대 커넥션 수
-			System.out.println("Active : " + bds.getNumActive()); // 현재 사용 중인 커넥션 수
-			System.out.println("Idle : " + bds.getNumIdle()); // 유휴 상태 커넥션 수
+//			System.out.println("MaxTotal : " + bds.getMaxTotal()); // 최대 커넥션 수
+//			System.out.println("Active : " + bds.getNumActive()); // 현재 사용 중인 커넥션 수
+//			System.out.println("Idle : " + bds.getNumIdle()); // 유휴 상태 커넥션 수
 		} catch (NamingException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -68,6 +69,24 @@ public class JdbcUtil {
 		
 		// 데이터베이스 연결 객체가 저장된 Connection 타입 변수값 리턴
 		return con;
+	}
+	
+	// 데이터베이스 작업에 대한 Commit, Rollback 작업을 수행할 메서드 정의
+	// => 파라미터 : Connection 객체(con)
+	public static void commit(Connection con) {
+		try {
+			con.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void rollback(Connection con) {
+		try {
+			con.rollback();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// 데이터베이스 자원 반환을 공통으로 수행할 close() 메서드 정의
@@ -79,31 +98,28 @@ public class JdbcUtil {
 	// => 인스턴스 생성 없이도 메서드 호출이 가능하도록 static 메서드로 정의
 	public static void close(Connection con) {
 		try {
-			if(con != null) {
-				con.close();
-			}
+			con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}//close 끝
+	}
+
 	public static void close(PreparedStatement pstmt) {
 		try {
-			if(pstmt != null) {
-				pstmt.close();
-			}
+			pstmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}//close 끝
+	}
+
 	public static void close(ResultSet rs) {
 		try {
-			if(rs != null) {
 			rs.close();
-			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}//close 끝
+	}
+	
 }
 
 
