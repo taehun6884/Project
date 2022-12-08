@@ -1,5 +1,8 @@
 package action;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -29,6 +32,24 @@ public class MemberInsertProAction implements Action {
 		
 		boolean isInsertSucess = service.InsertMember(vo);
 		
+		
+		if(!isInsertSucess) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				out.println("<script>");
+				out.println("alert('회원가입 실패!')");
+				out.println("history.back()");
+				out.println("</script>");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}else {
+			forward = new ActionForward();
+			forward.setPath("LoginMember.mo");
+			forward.setRedirect(true);
+		}
 		
 		return forward;
 	}

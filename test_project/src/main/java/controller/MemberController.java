@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.MemberInsertProAction;
+import action.MemberLoginMemberProAction;
+import action.MemberLogoutAction;
 import vo.ActionForward;
 
 @WebServlet("*.mo")
@@ -30,7 +32,21 @@ public class MemberController extends HttpServlet{
 			forward.setPath("member/join.jsp");
 			forward.setRedirect(false);
 		}else if(command.equals("/MemberInsertPro.mo")) {
-			MemberInsertProAction aciont = new MemberInsertProAction();
+			action = new MemberInsertProAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/LoginMember.mo")) {
+			forward = new ActionForward();
+			forward.setPath("member/login.jsp");
+			forward.setRedirect(false);
+		}else if(command.equals("/LogintMemberPro.mo")) {
+			action = new MemberLoginMemberProAction();
+			forward = action.execute(request, response);
+			
+		}else if(command.equals("/MemberLogout.mo")) {
+			action = new MemberLogoutAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/MemberList.mo")) {
+			
 		}
 		
 		if(forward != null) {

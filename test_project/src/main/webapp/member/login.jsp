@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>member/login.jsp</title>
-<link href="../css/default.css" rel="stylesheet" type="text/css">
-<link href="../css/subpage.css" rel="stylesheet" type="text/css">
+<link href="css/default.css" rel="stylesheet" type="text/css">
+<link href="css/subpage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrap">
 		<!-- 헤더 들어가는곳 -->
-		<jsp:include page="../inc/top.jsp"></jsp:include>
+		<jsp:include page="/inc/top.jsp"></jsp:include>
 		<!-- 헤더 들어가는곳 -->
 		  
 		<!-- 본문들어가는 곳 -->
@@ -27,7 +27,7 @@
 		  <!-- 본문 내용 -->
 		  <article>
 		  	<h1>Login</h1>
-		  	<form action="loginPro.jsp" method="post" id="join">
+		  	<form action="LogintMemberPro.mo" method="post" id="join">
 		  		<fieldset>
 		  			<legend>Login Info</legend>
 		  			<label>User Id</label>
@@ -48,7 +48,7 @@
 		  
 		<div class="clear"></div>  
 		<!-- 푸터 들어가는곳 -->
-		<jsp:include page="../inc/bottom.jsp"></jsp:include>
+		<jsp:include page="/inc/bottom.jsp"></jsp:include>
 		<!-- 푸터 들어가는곳 -->
 	</div>
 </body>

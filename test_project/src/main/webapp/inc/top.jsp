@@ -6,7 +6,7 @@
   
   <c:choose>
   	<c:when test="${not empty sessionScope.sId and sessionScope.sId eq 'admin' }">
-  	  <div id="login">${sId }  || <a href="../member/logout.jsp">로그아웃</a> || <a href="../admin/memberList.jsp">회원관리</a></div>
+  	  <div id="login">${sId }  || <a href="MemberLogout.mo">로그아웃</a> || <a href="../admin/memberList.jsp">회원관리</a></div>
   <div class="clear"></div>
   	</c:when>
   	<c:when test="${not empty sessionScope.sId }">
@@ -14,7 +14,7 @@
   <div class="clear"></div>
   	</c:when>
   	<c:otherwise>
-  	<div id="login"><a href="../member/login.jsp">login</a>  || <a href="MemberInsertForm.mo">join</a></div>
+  	<div id="login"><a href="LoginMember.mo">login</a>  || <a href="MemberInsertForm.mo">join</a></div>
   	</c:otherwise>
   </c:choose>
   <!-- login join -->

@@ -19,9 +19,15 @@ public class MemberInsertProService {
 		
 		int insertCount = dao.insertMember(vo);
 		
+		if(insertCount > 0) {
+			JdbcUtil.commit(con);
+			isInsertMember = true;
+		}else {
+			JdbcUtil.rollback(con);
+		}
 		
-		
-		return false;
+		JdbcUtil.close(con);
+		return isInsertMember;
 	}
 	
 	
