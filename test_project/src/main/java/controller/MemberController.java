@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.MemberInfoAction;
 import action.MemberInsertProAction;
+import action.MemberListAction;
 import action.MemberLoginMemberProAction;
 import action.MemberLogoutAction;
 import vo.ActionForward;
@@ -46,7 +48,11 @@ public class MemberController extends HttpServlet{
 			action = new MemberLogoutAction();
 			forward = action.execute(request, response);
 		}else if(command.equals("/MemberList.mo")) {
-			
+			action = new MemberListAction();
+			forward = action.execute(request, response);
+		}else if(command.equals("/MemberInfo.mo")) {
+			action = new MemberInfoAction();
+			forward = action.execute(request, response);
 		}
 		
 		if(forward != null) {
