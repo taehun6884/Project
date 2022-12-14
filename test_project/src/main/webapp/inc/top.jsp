@@ -26,7 +26,7 @@
   <nav id="top_menu">
   	<ul>
   		<li><a href="../main/main.jsp">HOME</a></li>
-  		<li><a href="../company/welcome.jsp">COMPANY</a></li>
+  		<li><a href="ProdcutInsertForm.po">상품등록</a></li>
   		<li><a href="../company/welcome.jsp">SOLUTIONS</a></li>
   		<li><a href="../center/notice.jsp">CUSTOMER CENTER</a></li>
   		<li><a href="../mail/mailForm.jsp">CONTACT US</a></li>
